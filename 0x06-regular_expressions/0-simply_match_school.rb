@@ -1,14 +1,15 @@
 #!/usr/bin/env ruby
 
-# Accept the argument passed to the script
-arg = ARGV[0]
+# Extract the first argument as the input string
+input_string = ARGV[0]
 
-# Define the regular expression pattern
-pattern = /School/
+# Define the regular expression to match "School"
+regexp = /School/
 
-# Use the pattern to match the argument
-match = arg.match(pattern)
+# Find all occurrences of "School" in the input string
+matches = input_string.scan(regexp)
 
-# Output the matched result
-puts match ? match[0] : ""
-
+# Print each match followed by a dollar sign
+matches.each do |match|
+  puts "#{match}$"
+end
